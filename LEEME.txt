@@ -1,0 +1,5 @@
+SolBemol - sitio listo para publicar con GitHub Pages
+1. Sube el CONTENIDO de esta carpeta (index.html, css, js, assets, .nojekyll) a la RAIZ de un repositorio.
+2. En GitHub: Settings > Pages > Deploy from a branch > main > / (root) > Save.
+3. A los pocos minutos queda en https://TU-USUARIO.github.io/NOMBRE-DEL-REPO/
+Probar en tu computador: abre index.html con doble clic.
