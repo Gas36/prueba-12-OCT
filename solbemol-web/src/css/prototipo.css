@@ -1,0 +1,129 @@
+@import url('tokens.css');
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.65;
+       color: var(--negro); background: var(--blanco); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, p { margin: 0; }
+:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; }
+
+/* Rejilla con sangrado: 12 columnas centradas + márgenes elásticos hasta el borde */
+.grid {
+  display: grid;
+  column-gap: var(--gap);
+  grid-template-columns:
+    minmax(var(--gutter), 1fr)
+    repeat(12, minmax(0, calc((var(--container) - 11 * var(--gap)) / 12)))
+    minmax(var(--gutter), 1fr);
+}
+
+.eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font: 600 0.8rem/1 var(--font-display); letter-spacing: 0.16em; text-transform: uppercase;
+}
+.eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--acento); }
+
+.h2 { font: 600 var(--fs-h2)/1.04 var(--font-display); letter-spacing: -0.015em; text-wrap: balance; }
+
+/* ---------- Hero (maqueta; el real lleva video) ---------- */
+.hero-stub { background: var(--negro); color: var(--blanco); min-height: 56vh;
+             display: flex; align-items: flex-end; padding: 0 0 clamp(48px, 8vw, 96px); }
+.hero-stub .grid { width: 100%; }
+.hero-stub__text { grid-column: 2 / 12; }
+.hero-stub h1 { font: 600 clamp(2.6rem, 6vw, 5rem)/1.04 var(--font-display); letter-spacing: -0.015em; }
+.hero-stub h1 span { display: block; color: var(--acento); }
+.hero-stub small { display: block; margin-top: 28px; font-size: .8rem; opacity: .55; }
+
+/* ---------- Sección 2 · Problema (blanco) ---------- */
+.problema { position: relative; background: var(--blanco); color: var(--negro);
+            padding: var(--section-y) 0 calc(var(--section-y) + 56px); overflow: hidden; }
+.problema__texto { grid-column: 2 / 7; align-self: center; padding-top: 40px; }
+.problema__texto .h2 { margin: 26px 0 32px; }
+.problema__texto p + p { margin-top: 1em; }
+.problema__texto p { max-width: 46ch; }
+.problema__texto strong { font-weight: 600; }
+.problema__pregunta { margin-top: 2.2em !important; font: 500 1.55rem/1.3 var(--font-display);
+  text-decoration: underline; text-decoration-color: var(--acento); text-decoration-thickness: 6px;
+  text-underline-offset: 7px; text-decoration-skip-ink: none; }
+.problema__foto { grid-column: 8 / 15; margin: 0; align-self: center; }
+.problema__foto img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 22% 50%; }
+
+/* Teclas que nacen del borde inferior (esquina), del mismo color que la sección siguiente */
+.teclas { position: absolute; bottom: 0; left: max(var(--gutter), calc((100% - var(--container)) / 2));
+          width: 300px; height: 140px; fill: var(--negro); pointer-events: none; transform: scaleY(-1); }
+
+/* ---------- Sección 3 · Solución (negro o blanco, alternable) ---------- */
+.solucion { padding: var(--section-y) 0; background: var(--s-bg); color: var(--s-fg); }
+.solucion[data-theme="negro"]  { --s-bg: var(--negro);  --s-fg: var(--blanco); }
+.solucion[data-theme="blanco"] { --s-bg: var(--blanco); --s-fg: var(--negro); }
+.solucion__cab { grid-column: 2 / 9; }
+.solucion__cab .h2 { margin: 26px 0 28px; }
+.solucion__cab p { max-width: 52ch; font-size: var(--fs-lead); }
+.bloques { grid-column: 2 / 14; display: grid; grid-template-columns: repeat(3, 1fr);
+           gap: var(--gap); align-items: start; margin-top: clamp(48px, 7vw, 88px); }
+
+/* Superficie rugosa: solo el fondo se deforma, el texto queda nítido */
+.rugoso { position: relative; isolation: isolate; }
+.rugoso::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--acento);
+                  filter: url(#rough); }
+
+.bloque { padding: 34px 30px 44px; color: var(--negro);
+          opacity: 0; transform: translateY(44px);
+          transition: opacity .8s var(--ease), transform .9s var(--ease);
+          transition-delay: calc(var(--i) * 150ms); }
+.bloques.is-in .bloque { opacity: 1; transform: none; }
+.bloque h3 { font: 600 clamp(1.45rem, 2.3vw, 1.85rem)/1.15 var(--font-display); margin-bottom: 14px; }
+.bloque p { font-weight: 500; line-height: 1.55; }
+
+/* Variante B: alturas iguales */
+body[data-bloques="B"] .bloque { min-height: 300px; }
+/* Variante C: alturas distintas (teclas vistas de frente) + se hunden al pasar el cursor */
+body[data-bloques="C"] .bloque:nth-child(1) { min-height: 340px; }
+body[data-bloques="C"] .bloque:nth-child(2) { min-height: 270px; }
+body[data-bloques="C"] .bloque:nth-child(3) { min-height: 390px; }
+body[data-bloques="C"] .bloques.is-in .bloque:hover { transform: translateY(10px); transition-delay: 0ms; transition-duration: .25s; }
+
+/* Chips de instrumentos: siempre en el color opuesto al fondo de la sección */
+.chips { grid-column: 2 / 14; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+.chip { position: relative; isolation: isolate; color: var(--s-bg);
+        font: 500 1rem/1 var(--font-display); padding: 14px 24px;
+        opacity: 0; transform: translateY(16px);
+        transition: opacity .6s var(--ease), transform .7s var(--ease), translate .2s var(--ease);
+        transition-delay: calc(550ms + var(--i) * 70ms); }
+.chip::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--s-fg); filter: url(#rough-s); }
+.chips.is-in .chip { opacity: 1; transform: none; }
+.chips.is-in .chip:hover { translate: 0 3px; transition-delay: 0ms; }
+
+/* Chips 2: teclas altas, alturas alternadas como blancas y negras */
+body[data-chips="2"] .chips { gap: 5px; align-items: flex-start; }
+body[data-chips="2"] .chip { width: 82px; display: flex; align-items: flex-end; justify-content: center; padding: 0 0 20px; }
+body[data-chips="2"] .chip:nth-child(odd)  { height: 124px; }
+body[data-chips="2"] .chip:nth-child(even) { height: 92px; }
+/* Chips 3: un solo teclado segmentado */
+body[data-chips="3"] .chips { gap: 3px; }
+body[data-chips="3"] .chip { padding: 16px 26px; }
+
+/* ---------- Panel de prototipo (no es parte del sitio) ---------- */
+.panel { position: fixed; right: 16px; bottom: 16px; z-index: 50; width: 232px; padding: 14px 16px 16px;
+         background: #fff; color: #333; border: 2px solid #333; font: 500 13px/1.3 var(--font-body); }
+.panel strong { display: block; font: 600 12px/1 var(--font-display); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+.panel fieldset { border: 0; padding: 0; margin: 0 0 10px; }
+.panel legend { padding: 0; margin-bottom: 4px; opacity: .65; }
+.panel label { display: inline-flex; align-items: center; gap: 5px; margin-right: 10px; cursor: pointer; }
+.panel button { width: 100%; margin-top: 4px; padding: 9px; background: #333; color: #fff; border: 0; font: 600 13px var(--font-display); cursor: pointer; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .problema__texto { grid-column: 2 / 14; padding-top: 80px; }
+  .problema__foto  { grid-column: 1 / -1; margin-top: 48px; }
+  .solucion__cab, .bloques, .chips { grid-column: 2 / 14; }
+  .bloques { grid-template-columns: 1fr; }
+  body[data-bloques] .bloque { min-height: 0 !important; }
+  .hero-stub__text { grid-column: 2 / 14; }
+  .panel { width: auto; left: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bloque, .chip { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

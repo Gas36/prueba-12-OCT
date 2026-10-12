@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SolBemol — Prototipo secciones 2 y 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Jost:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/prototipo.css">
+</head>
+<body data-bloques="C" data-chips="1">
+
+  <!-- Filtros de borde rugoso (vibrante, orgánico) -->
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <filter id="rough" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough-s" x="-6%" y="-10%" width="112%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <!-- Hero: maqueta de transición. El real mantiene el video de Mux. -->
+  <header class="hero-stub">
+    <div class="grid"><div class="hero-stub__text">
+      <h1>La música no se fue. <span>Solo le faltaba un lugar.</span></h1>
+      <small>Maqueta del hero (el real lleva video)</small>
+    </div></div>
+  </header>
+
+  <!-- 2 · Problema -->
+  <section class="problema grid" id="problema" aria-labelledby="problema-t">
+    <svg class="teclas" viewBox="0 0 300 140" aria-hidden="true">
+      <g filter="url(#rough)">
+        <rect x="0"   y="0" width="15" height="70"/>
+        <rect x="38"  y="0" width="15" height="124"/>
+        <rect x="94"  y="0" width="15" height="58"/>
+        <rect x="132" y="0" width="15" height="96"/>
+        <rect x="170" y="0" width="15" height="40"/>
+        <rect x="238" y="0" width="15" height="110"/>
+        <rect x="276" y="0" width="15" height="66"/>
+      </g>
+    </svg>
+    <div class="problema__texto">
+      <p class="eyebrow">El punto de partida</p>
+      <h2 class="h2" id="problema-t">La música quedó en el camino.</h2>
+      <p>A los 7 años, casi todos quisimos aprender a tocar algo. La vida adulta lo fue postergando: <strong>el trabajo, los compromisos, la sensación de que ya es tarde.</strong></p>
+      <p>No es falta de ganas. Es falta de espacio y de una razón concreta para empezar.</p>
+      <p class="problema__pregunta">¿Y si ese espacio pudiera ser dentro de tu empresa?</p>
+    </div>
+    <figure class="problema__foto">
+      <img src="../assets/foto-guitarras.jpg" width="2000" height="1333"
+           alt="Tres personas tocando guitarra alrededor de una mesa de reuniones, con una cuarta en primer plano">
+    </figure>
+  </section>
+
+  <!-- 3 · Solución -->
+  <section class="solucion grid" id="solucion" data-theme="negro" aria-labelledby="solucion-t">
+    <div class="solucion__cab">
+      <p class="eyebrow">La solución</p>
+      <h2 class="h2" id="solucion-t">Un taller de música que llega a donde estás.</h2>
+      <p>SolBemol lleva clases directamente a la empresa, en horario de almuerzo o salida. Sin examen al final. Sin presión de nivel. Solo música, compañeros y el gusto de tocar algo real.</p>
+    </div>
+
+    <div class="bloques">
+      <article class="bloque rugoso" style="--i:0"><h3>En tu empresa</h3><p>Clases presenciales en horario de almuerzo o salida, donde tu equipo ya está.</p></article>
+      <article class="bloque rugoso" style="--i:1"><h3>Sin presión</h3><p>Sin examen al final y sin presión de nivel. Cada quien avanza a su ritmo.</p></article>
+      <article class="bloque rugoso" style="--i:2"><h3>Música real</h3><p>Música, compañeros y el gusto de tocar algo propio desde el primer día.</p></article>
+    </div>
+
+    <ul class="chips" aria-label="Instrumentos" style="list-style:none;padding:0;margin-block-end:0">
+      <li class="chip" style="--i:0">Piano</li>
+      <li class="chip" style="--i:1">Guitarra</li>
+      <li class="chip" style="--i:2">Ukelele</li>
+      <li class="chip" style="--i:3">Canto</li>
+      <li class="chip" style="--i:4">Banda</li>
+      <li class="chip" style="--i:5">y más</li>
+    </ul>
+  </section>
+
+  <!-- Panel solo para el prototipo -->
+  <aside class="panel" aria-label="Variantes del prototipo">
+    <strong>Prototipo</strong>
+    <fieldset><legend>Fondo sección 3</legend>
+      <label><input type="radio" name="fondo" value="negro" checked> Negro</label>
+      <label><input type="radio" name="fondo" value="blanco"> Blanco</label></fieldset>
+    <fieldset><legend>Bloques</legend>
+      <label><input type="radio" name="bloques" value="B"> B · iguales</label>
+      <label><input type="radio" name="bloques" value="C" checked> C · alturas</label></fieldset>
+    <fieldset><legend>Chips</legend>
+      <label><input type="radio" name="chips" value="1" checked> 1</label>
+      <label><input type="radio" name="chips" value="2"> 2</label>
+      <label><input type="radio" name="chips" value="3"> 3</label></fieldset>
+    <button type="button" id="repetir">Repetir entrada</button>
+  </aside>
+
+  <script src="js/prototipo.js" defer></script>
+</body>
+</html>

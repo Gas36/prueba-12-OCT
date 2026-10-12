@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SolBemol — Talleres de música para empresas</title>
+  <meta name="description" content="SolBemol lleva talleres de música a tu empresa: piano, guitarra, ukelele, canto y banda, en horario de almuerzo o salida.">
+  <meta name="theme-color" content="#333333">
+  <link rel="icon" href="../assets/Favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Jost:wght@500;600&family=Noto+Music&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+  <!-- Header: transparente sobre el hero, sólido al volver a aparecer -->
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <span class="site-header__side">Música en tu empresa</span>
+      <a class="site-header__logo" href="#inicio" aria-label="SolBemol, inicio">
+        <img src="../assets/logo_blanco.svg" alt="SolBemol" width="180" height="34">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-backdrop" data-nav-backdrop hidden></div>
+  <nav class="nav" id="primary-nav" aria-label="Navegación principal" data-nav>
+    <button class="nav__close" type="button">Cerrar</button>
+    <p class="nav__title">Explorar</p>
+    <ul>
+      <li><a class="nav__link" href="#inicio">Inicio</a></li>
+      <li><a class="nav__link" href="#solucion">El taller</a></li>
+      <li><a class="nav__link" href="#historias">Historias</a></li>
+      <li><a class="nav__link" href="#empresa">Para tu empresa</a></li>
+      <li><a class="nav__link" href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- 1 · Hero (negro, video de Mux) -->
+    <section class="hero" id="inicio" aria-labelledby="hero-t">
+      <div class="hero__bg">
+        <mux-video playback-id="7Ho8yKtlHPvt02x4MYSXSvAT02b4MHjabpKBWC6hgooK4"
+                   muted autoplay loop playsinline preload="auto"
+                   poster="https://image.mux.com/7Ho8yKtlHPvt02x4MYSXSvAT02b4MHjabpKBWC6hgooK4/thumbnail.jpg?time=1"></mux-video>
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="grid">
+        <div class="hero__text">
+          <p class="eyebrow">Talleres de música para empresas</p>
+          <h1 class="hero__title" id="hero-t"><span>La música no se fue.</span><span class="acento">Solo le faltaba un lugar.</span></h1>
+          <p class="hero__sub">Y ese lugar puede estar dentro de tu empresa.<span class="nota" aria-hidden="true"> ♪</span></p>
+          <div class="hero__acciones">
+            <a class="btn rugoso" href="#contacto" data-seed="21">Queremos música</a>
+            <a class="btn btn--linea rugoso rugoso--linea" href="#solucion" data-seed="34">Cómo funciona</a>
+          </div>
+        </div>
+        <!-- Pictograma de marca: translúcido, gana color al pasar el mouse -->
+        <div class="hero__figure" aria-hidden="true">
+          <svg class="hero__picto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.88 352.87" fill="currentColor" aria-hidden="true">
+            <g id="txt">
+              <g>
+                <path d="M117.47,194.25c-3.82.47-8.01.72-12.52.72-3.3,0-6.78-.13-10.41-.39-11.21-.79-35.97-4.76-54.93-7.98l-4.34,141.64-32.14,9.61v15.02h75.14v-29.22l-3.12-74.11,1.67-27.14h4.59l2.51,32.15,5.21,98.32h70.97v-13.35l-29.22-8.77-13.41-136.5Z"/>
+                <path d="M213.24,55.41c-.14-.03-.3-.04-.47-.04-5.96,0-30.66,14.76-30.66,14.76l-98.28,52.15-34.69,19.54-3.65-4.63-10.24,7.33h0c.33.46,2.71,2.75,10.69,2.75,3.69,0,7.86-.73,12.4-2.17,1.29-.79,4.77-4.22,7.6-7.5l.04-.04.03-.04c.07-.07,1.65-1.84,3.6-3.61,3.65-3.31,6.38-4.73,9.14-4.73,2.03,0,3.89.81,5.24,2.27,1.93,2.1,4,6.67,5.75,11.17l11.94-6.05s20.95,15.49,10.47,29.71c-6.15,8.35-18.17,10.98-30.86,10.98-9.46,0-19.3-1.46-27.35-3.1-5.41,1.64-10.78,2.83-15.66,3.27-5.72.52-10.11.76-13.82.76-1.38,0-2.68-.04-3.91-.12l.44.86s52.22,9.35,69.92,10.61c3.42.24,6.86.38,10.25.38,16.46,0,31.82-3.3,38.24-14.25,5.03-8.59,5.47-17.93,3.64-26.24-.08-.35-.16-.71-.24-1.06-.01-.03-.02-.07-.03-.1-1.59-6.38-4.47-12.08-7.56-16.25-3.02-3.68-5.84-5.97-5.9-6.01l-2.19-1.77c-.18-.15-.36-.29-.53-.42-.09-.07-.18-.14-.26-.21-.18-.14-.34-.27-.48-.38-.07-.06-.14-.11-.19-.15-.22-.17-.34-.27-.34-.27l36.41-20.84c-.5-1.05-1.06-2.24-1-3.54.28-6.33,10.69-18.39,12.78-20.75l1.01-1.15,1.53.15c3.84.39,14.71,1.74,20.79,5.18l1.65-.94c5.16-2.7,14.56-6.91,21.89-6.91,2.49,0,4.74.49,6.5,1.68-5.24-8.48-12.44-19.81-13.64-20.28Z"/>
+                <path d="M46.75,128.91l3.37,4.46.36-.19-3.73-4.27Z"/>
+                <path d="M86.37,151.05c.23.71.37,1.13.37,1.13-4.91,3.94-19.08,11.33-33.08,15.78-4.34,1.38-8.67,2.48-12.69,3.1-1.11.17-2.19.31-3.24.4-5.25.47-9.61.73-13.27.73-2.77,0-5.14-.15-7.18-.46-3.81-.59-6.5-1.75-8.61-3.62-2.78-2.43-4.53-6.08-6.51-11.2-7.6-19.74,5.52-76.49,28.39-87.78,5.03-2.48,9.81-3.29,13.9-3.29,7.49,0,12.64,2.7,12.64,2.7l1.58-18.29s-6.54-14.14-2.48-34.93c1.24-6.37,4.36-15.32,20.95-15.32,26.08,0,24.79,27.94,24.79,27.94,0,0-.04,27.38-6.73,32.24-1.14.83-2.9,1.16-4.98,1.16-7.95,0-20.51-4.78-20.51-4.78l-.14,1.03,19.1,7.49-.88,9.4s17.34,3.5,22.03,6.86c.99.71,1.94,1.55,2.85,2.47,4.55,4.57,7.94,10.97,8.42,11.9l-70.61,37.47-3.73-4.27-4.76,3.4-4.67,3.34-.19-15.96-2.57-.27s-7.66,14.59-6.78,23.07c.14,1.35.49,2.54,1.12,3.5.42.63.95,1.29,1.61,1.93h0c2.77,2.75,7.75,5.35,15.43,5.35,4.05,0,8.86-.72,14.5-2.54,2.92-.94,10.04-9.21,10.04-9.21,0,0,5.68-6.34,8.27-6.34.33,0,.61.1.82.33,1.4,1.53,3.27,5.95,4.75,9.86.88,2.31,1.62,4.44,2.05,5.68Z"/>
+                <polygon points="50.48 133.18 50.12 133.37 46.75 128.91 50.48 133.18"/>
+                <path d="M188.4,106.46c-.45.25-1.66.71-2.68,1.01l-.99.28-.6.83c-.18.24-16.5,22.43-36.94,32.49-1.75-5.43-4.99-10.13-7.94-13.59-.01-.02-.03-.04-.05-.06-.88-1.14-1.78-2.17-2.66-3.08l14.26-7.13h.03c4.12-2.12,13.36-7.17,16.37-11.47h.01c.3-.43.54-.86.71-1.27.75-1.85-.09-3.63-.76-5.06-.06-.13-.14-.28-.21-.43-.08-.18-.16-.36-.21-.49.37-2.79,5.35-9.95,10.25-15.67,5.05.6,9.92,1.63,13.39,2.74,2.61.84,4.42,1.73,4.89,2.52.21.35.32.82.36,1.39.26,4.05-3.62,12.92-7.23,16.99Z"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · Problema (blanco) -->
+    <section class="sec sec--blanco grid problema" id="problema" aria-labelledby="problema-t">
+      <div class="problema__texto">
+        <p class="eyebrow">El punto de partida</p>
+        <h2 class="h2" id="problema-t">La música quedó en el camino.</h2>
+        <p>A los 7 años, casi todos quisimos aprender a tocar algo. La vida adulta lo fue postergando: <strong>el trabajo, los compromisos, la sensación de que ya es tarde.</strong></p>
+        <p>No es falta de ganas. Es falta de espacio y de una razón concreta para empezar.</p>
+        <p class="problema__pregunta">¿Y si ese espacio pudiera ser dentro de tu empresa?</p>
+      </div>
+      <figure class="problema__foto">
+        <img src="../assets/foto-guitarras.jpg" width="2000" height="1333" loading="lazy"
+             alt="Tres personas tocando guitarra alrededor de una mesa de reuniones, con una cuarta en primer plano">
+      </figure>
+      <div class="teclado teclado--izq" data-teclado="5/0 9/1 4/1 11/2 6/1 8/1 3/2 6/1 10/1 16/2 7/1 13/1 16/1 9/2 15/1 5/1 16/2 8/1 14/1 4/2 16/1 10/1 6/1 15/2 8/1 5/1 11/1 7/2 4/1 9/1" data-barrido aria-hidden="true"></div>
+    </section>
+
+    <!-- 3 · Solución (negro) -->
+    <section class="sec sec--negro grid solucion" id="solucion" aria-labelledby="solucion-t">
+      <div class="solucion__cab">
+        <p class="eyebrow">La solución</p>
+        <h2 class="h2" id="solucion-t">Un taller de música que llega a donde estás.</h2>
+        <p class="lead">SolBemol lleva clases directamente a la empresa, en horario de almuerzo o salida. Sin examen al final. Sin presión de nivel. Solo música, compañeros y el gusto de tocar algo real.</p>
+      </div>
+      <div class="bloques" data-entra>
+        <article class="bloque rugoso entra" style="--i:0" data-seed="41"><h3>En tu empresa</h3><p>Clases presenciales en horario de almuerzo o salida, donde tu equipo ya está.</p></article>
+        <article class="bloque rugoso entra" style="--i:1" data-seed="52"><h3>Sin presión</h3><p>Sin examen al final y sin presión de nivel. Cada quien avanza a su ritmo.</p></article>
+        <article class="bloque rugoso entra" style="--i:2" data-seed="63"><h3>Música real</h3><p>Música, compañeros y el gusto de tocar algo propio desde el primer día.</p></article>
+      </div>
+      <ul class="chips" aria-label="Instrumentos" data-entra style="--d:500ms">
+        <li class="chip rugoso entra" style="--i:0" data-seed="71" data-lean="3">Piano</li>
+        <li class="chip rugoso entra" style="--i:1" data-seed="72" data-lean="3">Guitarra</li>
+        <li class="chip rugoso entra" style="--i:2" data-seed="73" data-lean="3">Ukelele</li>
+        <li class="chip rugoso entra" style="--i:3" data-seed="74" data-lean="3">Canto</li>
+        <li class="chip rugoso entra" style="--i:4" data-seed="75" data-lean="3">Banda</li>
+        <li class="chip rugoso entra" style="--i:5" data-seed="76" data-lean="3">y más</li>
+      </ul>
+    </section>
+
+    <!-- 4 · Historias (blanco) -->
+    <section class="sec sec--blanco grid historias" id="historias" aria-labelledby="historias-t">
+      <div class="historias__intro">
+        <p class="eyebrow">Historias</p>
+        <h2 class="h2" id="historias-t">Personas reales, resultados reales.</h2>
+        <p>Una hora a la semana, y la música vuelve a ser parte de quiénes son.</p>
+        <div class="rail-btns">
+          <button class="rail-btn rugoso" type="button" data-rail-dir="-1" data-seed="81" aria-label="Historia anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="rail-btn rugoso" type="button" data-rail-dir="1" data-seed="82" aria-label="Historia siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <!-- Para sumar testimonios: duplica un <figure class="voz"> con nombre, contexto y cita (1-2 frases).
+           PENDIENTE: pedir al cliente 2-3 testimonios más y fotos oficiales de las personas que participan (con su autorización). -->
+      <div class="voces" data-rail tabindex="0" role="region" aria-label="Testimonios, desliza para ver más">
+        <figure class="voz">
+          <p class="voz__resumen">Nunca había tocado un instrumento. Hoy tiene un piano en su casa y busca acordes y canciones por su cuenta.</p>
+          <blockquote>Aquella vez que me di cuenta que estaba entendiendo la música, en casa pude buscar acordes y producir algo que nació de mí. Reconocí una melodía, la busqué y pude hacerlo.”</blockquote>
+          <figcaption class="voz__quien"><strong>Braulio</strong>El constante · taller de piano</figcaption>
+        </figure>
+        <figure class="voz">
+          <p class="voz__resumen">Músico de corazón. El taller le dio el escenario que quería y compañeros con quienes compartir algo más que reuniones.</p>
+          <blockquote>No podría vivir sin música. Cuando empiezas a aprenderla, encuentras algo distinto a solo escucharla: entenderla y sentirla.”</blockquote>
+          <figcaption class="voz__quien"><strong>Juan Carlos</strong>El alma de la fiesta</figcaption>
+        </figure>
+        <figure class="voz">
+          <blockquote>La gente lo valora y lo considera un beneficio muy único. Da espacio para compartir; se vinculan entre ellos aunque no sean de la misma área. La banda es especial, porque es un sello de nuestra empresa.”</blockquote>
+          <figcaption class="voz__quien"><strong>Ivonne Suárez</strong>Document &amp; Benefit Manager, Ultranav</figcaption>
+        </figure>
+        <!-- PLACEHOLDER: reservado para otra persona. Reemplazar textos y quitar la clase voz--pendiente (y el recuadro .voz__foto) cuando llegue el testimonio y la foto oficial. -->
+        <figure class="voz voz--pendiente">
+          <div class="voz__resumen"><span class="voz__foto">Foto</span></div>
+          <blockquote>Aquí irá el testimonio de otra persona que participa en el taller.”</blockquote>
+          <figcaption class="voz__quien"><strong>Nombre y apellido</strong>Cargo, empresa</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 5 · Para tu empresa (negro) -->
+    <section class="sec sec--negro grid empresa" id="empresa" aria-labelledby="empresa-t">
+      <figure class="empresa__foto">
+        <img src="../assets/foto-audifonos.jpg" width="2000" height="1333" loading="lazy"
+             alt="Una alumna con audífonos toca un teclado mientras su profesor la guía sobre una tablet">
+      </figure>
+      <div class="empresa__intro">
+        <p class="eyebrow">Para tu empresa</p>
+        <h2 class="h2" id="empresa-t">Simple para la empresa. Significativo para las personas.</h2>
+        <p>Todo esto ocurre sin que RRHH tenga que gestionarlo. SolBemol coordina espacio, instrumentos y horarios, y la empresa recibe una sola factura al mes.</p>
+      </div>
+
+      <div class="empresa__razones">
+        <h3>Cuatro razones para decir que sí</h3>
+        <div class="razon"><i class="razon__nota" aria-hidden="true">♩</i><strong>Alta participación</strong><span>La gente elige entrar porque quiere, no porque se lo asignaron.</span></div>
+        <div class="razon"><i class="razon__nota" aria-hidden="true">𝅗𝅥</i><strong>Resultado visible</strong><span>Una presentación en el evento de fin de año es el mejor argumento frente a gerencia.</span></div>
+        <div class="razon"><i class="razon__nota" aria-hidden="true">♪</i><strong>Cero carga administrativa</strong><span>Opera de forma autónoma.</span></div>
+        <div class="razon"><i class="razon__nota" aria-hidden="true">♫</i><strong>Un sello como empleador</strong><span>La banda es un sello que casi ninguna empresa tiene.</span></div>
+      </div>
+      <div class="empresa__datos" data-entra>
+        <div class="dato rugoso entra" style="--i:0" data-seed="91"><strong>60 min</strong><span>de clase, cada semana.</span></div>
+        <div class="dato rugoso entra" style="--i:1" data-seed="92"><strong>1 factura</strong><span>al mes, sin fricciones administrativas.</span></div>
+        <div class="dato rugoso entra" style="--i:2" data-seed="93"><strong>En vivo</strong><span>la banda toca en tus eventos.</span></div>
+      </div>
+    </section>
+
+    <!-- 6 · El diferenciador (blanco) -->
+    <section class="sec sec--blanco grid escenario" id="escenario" aria-labelledby="escenario-t">
+      <div class="escenario__titulo">
+        <p class="eyebrow">El diferenciador</p>
+        <h2 class="h2" id="escenario-t">El único programa que termina en un escenario.</h2>
+      </div>
+      <div class="escenario__texto">
+        <p>Hay proveedores de wellness que trabajan con música: algunos la usan para hablar de liderazgo, otros hacen percusión como team building. SolBemol es diferente: no usa la música como herramienta para otra cosa.</p>
+      </div>
+      <div class="escenario__fin rugoso" data-seed="103">
+        <p>La música es el fin.</p>
+        <svg class="escenario__picto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255.45 350.24" fill="currentColor" aria-hidden="true"><path d="M248.09,19.16l7.36-.94-.58-3.76-7.28.13-.43-2.28-11.74,1.32s.5-9.86-12.64-9.86c-12.12,0-10.93,12.5-10.93,12.5l-6.53,1.85s-.04-7.08-11.06-7.08c-4.59,0-12.14,3.77-12.14,14.5s8.15,13.67,13.25,13.67c11.91,0,11.94-10.45,11.94-10.45l6.01.62,3.7,3.37.76,38.18-54.4-4.09v-8.59c-4.81,1.5-14.48.09-14.48.09l-.27-1.01s21.39-.69,24.92-6.48c4.3-7.07-6.22-32.35-6.22-32.35,0,0-9.58-26.28-33.64-16.23-15.31,6.4-14.74,15.86-13.43,22.22,4.27,20.74,15.75,31.27,15.75,31.27l.6,11.93-.8.03s-17.2,3.08-30.59,11.14c-8.91,5.37-18.95,12.03-32.15,23.92-15.48-4.56-35.77-.61-44.32-6-9.82-6.19-7.95-26.59-22.83-11.72-17.56,17.56,8.79,22.61,14.75,25.68,12.82,6.59,22.98,17.84,54.85,17.84,18.91,0,40.63-17.38,40.63-17.38l-2.94,214.4-32.15,9.6v15.03h75.15v-29.22l-3.12-74.11,1.67-27.14h3.09l11.83,35.64-2.62,94.83,70.97-8.7v-17.39l-30.08-6.75-1.79-70.54-16.43-67.04-8.21-82.32s48.79,7.61,55.29,1.11c13.36-13.36-1.91-68.03-1.91-68.03l-.33-6.65,14.06-1.13-.56-3.65Z"/></svg>
+      </div>
+      <!-- PENDIENTE: la banda es clave. Pedir fotos oficiales (de escenario y de ensayo) y más material; la foto actual es de baja resolución,
+           por eso se usa en recortes pequeños y en blanco y negro. Aquí también puede ir un video corto (Mux) de la banda. -->
+      <div class="teclado teclado--der" data-entra aria-hidden="true">
+        <i class="tecla rugoso" style="--n:6;--k:0;--i:0" data-seed="11" data-lean="6" data-plano></i>
+        <i class="tecla tecla--foto" style="--n:12;--k:1;--i:1;--pos:93%" data-seed="16" data-plano><img src="../assets/foto-banda.jpg" alt="" loading="lazy"></i>
+        <i class="tecla rugoso" style="--n:9;--k:1;--i:2" data-seed="21" data-lean="6" data-plano></i>
+        <i class="tecla tecla--foto" style="--n:16;--k:1;--i:3;--pos:51%" data-seed="26" data-plano><img src="../assets/foto-banda.jpg" alt="" loading="lazy"></i>
+        <i class="tecla tecla--foto" style="--n:10;--k:1;--i:4;--pos:20%" data-seed="31" data-plano><img src="../assets/foto-banda.jpg" alt="Banda de SolBemol tocando en un evento de empresa" loading="lazy"></i>
+      </div>
+    </section>
+
+    <!-- 7 · Contacto (negro) -->
+    <section class="sec sec--negro grid contacto" id="contacto" aria-labelledby="contacto-t">
+      <div class="contacto__intro">
+        <p class="eyebrow">Conversemos</p>
+        <h2 class="h2" id="contacto-t">Démosle un lugar a la música en tu empresa.</h2>
+        <p class="lead">Cuéntanos de tu equipo y te mostramos cómo podría funcionar. Es más simple de lo que parece.</p>
+      </div>
+      <form class="form" id="contact-form" novalidate>
+        <div class="form__fila">
+          <div class="campo"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="error"></span></div>
+          <div class="campo"><label for="empresa-campo">Empresa <span class="opc">(opcional)</span></label><input id="empresa-campo" name="empresa" type="text" autocomplete="organization"><span class="error"></span></div>
+        </div>
+        <div class="form__fila">
+          <div class="campo"><label for="email">Correo</label><input id="email" name="email" type="email" autocomplete="email" required><span class="error"></span></div>
+          <div class="campo"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required><span class="error"></span></div>
+        </div>
+        <div class="campo"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuántas personas son, qué les gustaría tocar, en qué horario."></textarea><span class="error"></span></div>
+        <button class="btn rugoso form__enviar" type="submit" data-seed="111">Enviar mensaje</button>
+        <p class="form__estado" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form__nota">Al enviar aceptas que te contactemos por este medio. No compartimos tus datos.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="grid pie__grid">
+      <div class="pie__marca"><p>Talleres de música para empresas.</p></div>
+      <nav class="pie__col" aria-label="Pie de página">
+        <h3>Explorar</h3>
+        <ul>
+          <li><a href="#solucion">El taller</a></li>
+          <li><a href="#historias">Historias</a></li>
+          <li><a href="#empresa">Para tu empresa</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="pie__col">
+        <h3>Conversemos</h3>
+        <ul>
+          <li><a href="#contacto">Cuéntanos de tu equipo</a></li>
+          <li><a href="mailto:hola@solbemol.cl">hola@solbemol.cl</a></li>
+        </ul>
+      </div>
+      <p class="pie__base"><span>© <span id="year">2026</span> SolBemol. Todos los derechos reservados.</span><span>Hecho con música en Chile.</span></p>
+      <div class="wordmark">
+<svg class="wordmark__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 655.87 130" fill="currentColor" role="img" aria-label="SolBemol"><g>
+          <g>
+            <path d="M31.02,124.09c-13.3,0-26.59-4.43-26.59-4.43v-17.73s13.3,4.43,26.59,4.43c8.86,0,13.29-4.43,13.29-8.86,0-13.3-44.32-4.43-44.32-35.45,0-17.73,13.29-26.59,31.02-26.59,13.29,0,26.59,4.43,26.59,4.43v17.73s-13.3-4.43-26.59-4.43c-8.86,0-13.3,4.43-13.3,8.86,0,13.29,44.32,4.43,44.32,35.45,0,17.73-13.29,26.59-31.02,26.59Z"/>
+            <path d="M155.11,79.77c0,26.59-17.73,44.32-44.32,44.32s-44.32-17.73-44.32-44.32,17.73-44.32,44.32-44.32,44.32,17.73,44.32,44.32ZM84.2,79.77c0,17.73,13.3,26.59,26.59,26.59s26.59-8.86,26.59-26.59-13.3-26.59-26.59-26.59-26.59,8.86-26.59,26.59Z"/>
+            <path d="M212.71,106.37v17.73h-53.18v-17.73h17.73V17.73h-17.73V0h35.45v106.37h17.73Z"/>
+            <path d="M298.82,79.77c0,26.59-17.73,44.32-44.32,44.32h-31.02V0h17.73v36.87c3.55-.71,8.15-1.42,13.3-1.42,26.59,0,44.32,17.73,44.32,44.32ZM281.09,79.77c0-17.73-13.3-26.59-26.59-26.59-4.08,0-9.04.89-13.3,1.95v51.24h13.3c13.29,0,26.59-8.86,26.59-26.59Z"/>
+            <path d="M384.28,84.21h-61.69c1.95,14.71,14.18,22.16,26.23,22.16,17.73,0,26.59-8.86,26.59-8.86v17.73s-8.86,8.86-26.59,8.86c-26.59,0-44.32-17.73-44.32-44.32s17.73-44.32,39.89-44.32,39.89,17.73,39.89,44.32v4.43ZM323.12,70.91h42.54c-2.48-11.88-10.46-17.73-21.27-17.73s-18.79,5.85-21.27,17.73Z"/>
+            <path d="M598.26,79.77c0,26.59-17.73,44.32-44.32,44.32s-44.32-17.73-44.32-44.32,17.73-44.32,44.32-44.32,44.32,17.73,44.32,44.32ZM527.35,79.77c0,17.73,13.29,26.59,26.59,26.59s26.59-8.86,26.59-26.59-13.29-26.59-26.59-26.59-26.59,8.86-26.59,26.59Z"/>
+            <path d="M655.87,106.37v17.73h-53.18v-17.73h17.73V17.73h-17.73V0h35.46v106.37h17.73Z"/>
+            <path d="M410.23,35.45v88.64h-17.73V46.53c0-6.12,4.96-11.08,11.08-11.08h6.65Z"/>
+            <path d="M432.19,35.45v26.59h-17.44v-26.59h17.44Z"/>
+            <path d="M476.81,35.45v26.59h-17.44v-26.59h17.44Z"/>
+            <path d="M454.71,35.45v88.64h-17.73V35.45h17.73Z"/>
+            <path d="M499.19,46.53v77.56h-17.73V35.45h6.65c6.12,0,11.08,4.96,11.08,11.08Z"/>
+            
+          </g>
+        </g></svg>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Versión fijada del componente de video (antes: @latest) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@mux/mux-video@0.31.4"></script>
+  <script src="js/shapes.js" defer></script>
+  <script src="js/site.js" defer></script>
+</body>
+</html>

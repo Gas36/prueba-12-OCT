@@ -1,0 +1,33 @@
+/* SolBemol v2 — tokens. Una sola fuente de verdad para color, tipo y espacio. */
+:root {
+  /* Color: blanco y negro como teclas; un solo acento */
+  --blanco: #FFFFFF;
+  --negro:  #333333;
+  --acento: #E07A5F;
+  /* Reglas finas: tintes del mismo negro / blanco, no colores nuevos */
+  --regla-claro:  rgba(51, 51, 51, 0.3);
+  --regla-oscuro: rgba(255, 255, 255, 0.32);
+
+  /* Tipografía (Ouma Latin puede reemplazar --font-display más adelante) */
+  --font-display: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:    'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-h2:   clamp(2.2rem, 4.6vw, 3.75rem);
+  --fs-lead: clamp(1.1rem, 1.5vw, 1.25rem);
+  --fs-body: 1.0625rem;
+
+  /* Layout: 12 columnas dentro de --container, con sangrado a los bordes */
+  --container: 1340px;
+  --gap: 24px;
+  --gutter: clamp(20px, 5vw, 48px);
+  --ml: clamp(20px, 4.4vw, 64px);   /* margen izquierdo: más corto, más editorial */
+  --mr: clamp(20px, 3.4vw, 48px);
+  --section-y: clamp(80px, 11vw, 150px);
+
+  /* Teclas decorativas: ancho, alto unitario y separación */
+  --bw: clamp(30px, 4.6vw, 68px);
+  --u:  clamp(12px, 1.9vw, 28px);
+  --g:  clamp(10px, 1.6vw, 24px);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
