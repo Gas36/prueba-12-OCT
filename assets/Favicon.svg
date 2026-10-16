@@ -6,6 +6,10 @@
         fill: #2b2e31;
       }
 
+      @media (prefers-color-scheme: dark) {
+        .cls-1 { fill: #ffffff; }
+      }
+
       .cls-2 {
         fill: none;
         stroke: #231f20;
@@ -22,6 +26,5 @@
       <path class="cls-1" d="M11.34,3.37v13.29h-2.66V3.37h2.66Z"/>
       <path class="cls-1" d="M18.01,5.03v11.63h-2.66V3.37h1c.92,0,1.66.74,1.66,1.66Z"/>
     </g>
-    <rect class="cls-2" x=".01" y=".01" width="20" height="20"/>
   </g>
 </svg>
