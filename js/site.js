@@ -59,39 +59,55 @@
   } else { groups.forEach(enter); }
 
 
-  /* ---------- Barras de la sección 2: crecen de izquierda a derecha con el scroll ----------
-     El movimiento sigue al scroll pero con inercia (suavizado), para que se sienta y no se dispare. */
-  var barrido = document.querySelector('[data-barrido]');
-  if (barrido) {
-    var sec = barrido.closest('section');
-    var objetivo = 0, actual = 0, corriendo = false;
-    var easeIO = function (x) { return 0.5 - Math.cos(Math.PI * x) / 2; };
-    var pinta = function () {
-      [barrido.querySelectorAll('.tecla')].forEach(function (teclas) {
-        var N = teclas.length, span = 12;
-        // En móvil solo se ven las primeras barras: el barrido se reparte entre ellas
-        if (window.innerWidth <= 900) {
-          var vis = 0;
-          teclas.forEach(function (t) { if (t.offsetLeft < barrido.clientWidth) vis++; });
-          N = Math.max(vis, 4); span = 5;
-        }
-        teclas.forEach(function (t, i) {
-          var l = Math.min(1, Math.max(0, (actual * (N + span) - i) / span));
-          t.style.transform = 'scaleY(' + (0.02 + 0.98 * easeIO(l)).toFixed(4) + ')';
-        });
+  /* ---------- Barras entre secciones: crecen con el scroll ----------
+     [data-barrido] crece hacia arriba desde el borde inferior de su sección (negras, sección 2);
+     [data-barrido][data-cuelga] es el reflejo: cuelga del borde superior de su sección (blancas, sección 5).
+     El movimiento sigue al scroll con una inercia corta: suave, pero sin quedarse atrás cuando la sección ya salió de la pantalla. */
+  var easeIO = function (x) { return 0.5 - Math.cos(Math.PI * x) / 2; };
+  var barras = [];
+  document.querySelectorAll('[data-barrido]').forEach(function (el) {
+    barras.push({ el: el, sec: el.closest('section'), cuelga: el.hasAttribute('data-cuelga'), objetivo: 0, actual: 0 });
+  });
+  if (barras.length) {
+    var corriendo = false;
+    var pinta = function (b) {
+      var teclas = b.el.querySelectorAll('.tecla');
+      var N = teclas.length, span = 12;
+      // En móvil solo se ven las primeras barras: el barrido se reparte entre ellas
+      if (window.innerWidth <= 900) {
+        var vis = 0, W = b.el.clientWidth;
+        teclas.forEach(function (t) { if (t.offsetLeft + t.offsetWidth > 0 && t.offsetLeft < W) vis++; });
+        N = Math.max(vis, 4); span = 5;
+      }
+      teclas.forEach(function (t, i) {
+        var l = Math.min(1, Math.max(0, (b.actual * (N + span) - i) / span));
+        // Antes de empezar la barra no existe (sin astillas dentadas en el borde); después crece desde cero
+        t.style.visibility = l <= 0.001 ? 'hidden' : 'visible';
+        t.style.transform = 'scaleY(' + Math.max(easeIO(l), 0.001).toFixed(4) + ')';
       });
     };
     var calcula = function () {
-      var vh = window.innerHeight, r = sec.getBoundingClientRect();
-      objetivo = reduce ? 1 : Math.min(1, Math.max(0, (vh * 1.05 - r.bottom) / (vh * 0.85)));
+      var vh = window.innerHeight;
+      barras.forEach(function (b) {
+        var r = b.sec.getBoundingClientRect();
+        var p = b.cuelga ? (vh * 0.95 - r.top) / (vh * 0.6) : (vh * 1.05 - r.bottom) / (vh * 0.85);
+        b.objetivo = reduce ? 1 : Math.min(1, Math.max(0, p));
+      });
     };
     var bucle = function () {
-      actual += (objetivo - actual) * 0.07;
-      if (Math.abs(objetivo - actual) < 0.0005) actual = objetivo;
-      pinta();
-      if (actual !== objetivo) requestAnimationFrame(bucle); else corriendo = false;
+      var sigue = false;
+      barras.forEach(function (b) {
+        b.actual += (b.objetivo - b.actual) * 0.2;
+        if (Math.abs(b.objetivo - b.actual) < 0.0005) b.actual = b.objetivo; else sigue = true;
+        pinta(b);
+      });
+      if (sigue) requestAnimationFrame(bucle); else corriendo = false;
     };
-    var arranca = function () { calcula(); if (reduce) { actual = objetivo; pinta(); return; } if (!corriendo) { corriendo = true; requestAnimationFrame(bucle); } };
+    var arranca = function () {
+      calcula();
+      if (reduce) { barras.forEach(function (b) { b.actual = b.objetivo; pinta(b); }); return; }
+      if (!corriendo) { corriendo = true; requestAnimationFrame(bucle); }
+    };
     window.addEventListener('scroll', arranca, { passive: true });
     window.addEventListener('resize', arranca);
     window.addEventListener('load', arranca);

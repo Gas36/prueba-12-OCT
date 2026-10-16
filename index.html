@@ -107,13 +107,13 @@
         <article class="bloque rugoso entra" style="--i:1" data-seed="52"><h3>Sin presión</h3><p>Sin examen al final y sin presión de nivel. Cada quien avanza a su ritmo.</p></article>
         <article class="bloque rugoso entra" style="--i:2" data-seed="63"><h3>Música real</h3><p>Música, compañeros y el gusto de tocar algo propio desde el primer día.</p></article>
       </div>
-      <ul class="chips" aria-label="Instrumentos" data-entra style="--d:500ms">
-        <li class="chip rugoso entra" style="--i:0" data-seed="71" data-lean="3">Piano</li>
-        <li class="chip rugoso entra" style="--i:1" data-seed="72" data-lean="3">Guitarra</li>
-        <li class="chip rugoso entra" style="--i:2" data-seed="73" data-lean="3">Ukelele</li>
-        <li class="chip rugoso entra" style="--i:3" data-seed="74" data-lean="3">Canto</li>
-        <li class="chip rugoso entra" style="--i:4" data-seed="75" data-lean="3">Banda</li>
-        <li class="chip rugoso entra" style="--i:5" data-seed="76" data-lean="3">y más</li>
+      <ul class="instrumentos" aria-label="Instrumentos" data-entra style="--d:500ms">
+        <li class="instrumento rugoso entra" style="--i:0" data-seed="71" data-lean="3"><span>Piano</span></li>
+        <li class="instrumento rugoso entra" style="--i:1" data-seed="72" data-lean="3"><span>Guitarra</span></li>
+        <li class="instrumento rugoso entra" style="--i:2" data-seed="73" data-lean="3"><span>Ukelele</span></li>
+        <li class="instrumento rugoso entra" style="--i:3" data-seed="74" data-lean="3"><span>Canto</span></li>
+        <li class="instrumento rugoso entra" style="--i:4" data-seed="75" data-lean="3"><span>Banda</span></li>
+        <li class="instrumento instrumento--mas rugoso entra" style="--i:5" data-seed="76" data-lean="3" tabindex="0"><p class="instrumento__msg">¿Otro instrumento en mente? Cuéntanos y lo conversamos.</p><span>y más</span></li>
       </ul>
     </section>
 
@@ -156,6 +156,8 @@
 
     <!-- 5 · Para tu empresa (negro) -->
     <section class="sec sec--negro grid empresa" id="empresa" aria-labelledby="empresa-t">
+      <!-- Reflejo de las barras de la sección 2: mismas barras, en blanco, colgando del borde superior y desde la derecha -->
+      <div class="teclado teclado--der teclado--cuelga" data-teclado="5/0 9/1 4/1 11/2 6/1 8/1 3/2 6/1 10/1 16/2 7/1 13/1 16/1 9/2 15/1 5/1 16/2 8/1 14/1 4/2 16/1 10/1 6/1 15/2 8/1 5/1 11/1 7/2 4/1 9/1" data-barrido data-cuelga aria-hidden="true"></div>
       <figure class="empresa__foto">
         <img src="assets/foto-audifonos.jpg" width="2000" height="1333" loading="lazy"
              alt="Una alumna con audífonos toca un teclado mientras su profesor la guía sobre una tablet">
@@ -189,18 +191,20 @@
       <div class="escenario__texto">
         <p>Hay proveedores de wellness que trabajan con música: algunos la usan para hablar de liderazgo, otros hacen percusión como team building. SolBemol es diferente: no usa la música como herramienta para otra cosa.</p>
       </div>
-      <div class="escenario__fin rugoso" data-seed="103">
-        <p>La música es el fin.</p>
-        <svg class="escenario__picto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255.45 350.24" fill="currentColor" aria-hidden="true"><path d="M248.09,19.16l7.36-.94-.58-3.76-7.28.13-.43-2.28-11.74,1.32s.5-9.86-12.64-9.86c-12.12,0-10.93,12.5-10.93,12.5l-6.53,1.85s-.04-7.08-11.06-7.08c-4.59,0-12.14,3.77-12.14,14.5s8.15,13.67,13.25,13.67c11.91,0,11.94-10.45,11.94-10.45l6.01.62,3.7,3.37.76,38.18-54.4-4.09v-8.59c-4.81,1.5-14.48.09-14.48.09l-.27-1.01s21.39-.69,24.92-6.48c4.3-7.07-6.22-32.35-6.22-32.35,0,0-9.58-26.28-33.64-16.23-15.31,6.4-14.74,15.86-13.43,22.22,4.27,20.74,15.75,31.27,15.75,31.27l.6,11.93-.8.03s-17.2,3.08-30.59,11.14c-8.91,5.37-18.95,12.03-32.15,23.92-15.48-4.56-35.77-.61-44.32-6-9.82-6.19-7.95-26.59-22.83-11.72-17.56,17.56,8.79,22.61,14.75,25.68,12.82,6.59,22.98,17.84,54.85,17.84,18.91,0,40.63-17.38,40.63-17.38l-2.94,214.4-32.15,9.6v15.03h75.15v-29.22l-3.12-74.11,1.67-27.14h3.09l11.83,35.64-2.62,94.83,70.97-8.7v-17.39l-30.08-6.75-1.79-70.54-16.43-67.04-8.21-82.32s48.79,7.61,55.29,1.11c13.36-13.36-1.91-68.03-1.91-68.03l-.33-6.65,14.06-1.13-.56-3.65Z"/></svg>
-      </div>
       <!-- PENDIENTE: la banda es clave. Pedir fotos oficiales (de escenario y de ensayo) y más material; la foto actual es de baja resolución,
            por eso se usa en recortes pequeños y en blanco y negro. Aquí también puede ir un video corto (Mux) de la banda. -->
       <div class="teclado teclado--der" data-entra aria-hidden="true">
-        <i class="tecla rugoso" style="--n:6;--k:0;--i:0" data-seed="11" data-lean="6" data-plano></i>
-        <i class="tecla tecla--foto" style="--n:12;--k:1;--i:1;--pos:93%" data-seed="16" data-plano><img src="assets/foto-banda.jpg" alt="" loading="lazy"></i>
-        <i class="tecla rugoso" style="--n:9;--k:1;--i:2" data-seed="21" data-lean="6" data-plano></i>
-        <i class="tecla tecla--foto" style="--n:16;--k:1;--i:3;--pos:51%" data-seed="26" data-plano><img src="assets/foto-banda.jpg" alt="" loading="lazy"></i>
-        <i class="tecla tecla--foto" style="--n:10;--k:1;--i:4;--pos:20%" data-seed="31" data-plano><img src="assets/foto-banda.jpg" alt="Banda de SolBemol tocando en un evento de empresa" loading="lazy"></i>
+        <i class="tecla rugoso" style="--n:5;--k:0;--i:0" data-seed="11" data-lean="6" data-plano></i>
+        <i class="tecla tecla--foto" style="--n:10;--k:1;--i:1;--pos:93%" data-seed="16" data-plano><img src="assets/foto-banda.jpg" alt="" loading="lazy"></i>
+        <i class="tecla rugoso" style="--n:7;--k:1;--i:2" data-seed="21" data-lean="6" data-plano></i>
+        <i class="tecla tecla--foto" style="--n:12;--k:1;--i:3;--pos:51%" data-seed="26" data-plano><img src="assets/foto-banda.jpg" alt="" loading="lazy"></i>
+        <i class="tecla tecla--foto" style="--n:8;--k:1;--i:4;--pos:20%" data-seed="31" data-plano><img src="assets/foto-banda.jpg" alt="Banda de SolBemol tocando en un evento de empresa" loading="lazy"></i>
+      </div>
+      <!-- Cita final: una franja naranja a todo el ancho que cierra la idea del sitio justo antes del contacto -->
+      <div class="escenario__fin">
+        <span class="escenario__fondo rugoso" data-seed="103" aria-hidden="true"></span>
+        <p>La música es el fin.</p>
+        <svg class="escenario__picto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255.45 350.24" fill="currentColor" aria-hidden="true"><path d="M248.09,19.16l7.36-.94-.58-3.76-7.28.13-.43-2.28-11.74,1.32s.5-9.86-12.64-9.86c-12.12,0-10.93,12.5-10.93,12.5l-6.53,1.85s-.04-7.08-11.06-7.08c-4.59,0-12.14,3.77-12.14,14.5s8.15,13.67,13.25,13.67c11.91,0,11.94-10.45,11.94-10.45l6.01.62,3.7,3.37.76,38.18-54.4-4.09v-8.59c-4.81,1.5-14.48.09-14.48.09l-.27-1.01s21.39-.69,24.92-6.48c4.3-7.07-6.22-32.35-6.22-32.35,0,0-9.58-26.28-33.64-16.23-15.31,6.4-14.74,15.86-13.43,22.22,4.27,20.74,15.75,31.27,15.75,31.27l.6,11.93-.8.03s-17.2,3.08-30.59,11.14c-8.91,5.37-18.95,12.03-32.15,23.92-15.48-4.56-35.77-.61-44.32-6-9.82-6.19-7.95-26.59-22.83-11.72-17.56,17.56,8.79,22.61,14.75,25.68,12.82,6.59,22.98,17.84,54.85,17.84,18.91,0,40.63-17.38,40.63-17.38l-2.94,214.4-32.15,9.6v15.03h75.15v-29.22l-3.12-74.11,1.67-27.14h3.09l11.83,35.64-2.62,94.83,70.97-8.7v-17.39l-30.08-6.75-1.79-70.54-16.43-67.04-8.21-82.32s48.79,7.61,55.29,1.11c13.36-13.36-1.91-68.03-1.91-68.03l-.33-6.65,14.06-1.13-.56-3.65Z"/></svg>
       </div>
     </section>
 
@@ -229,6 +233,11 @@
   </main>
 
   <footer class="pie">
+    <div class="grid pie__correo">
+      <span class="pie__franja rugoso" data-seed="401" aria-hidden="true"></span>
+      <p class="eyebrow">Escríbenos directo</p>
+      <a href="mailto:hola@solbemol.cl">hola@solbemol.cl</a>
+    </div>
     <div class="grid pie__grid">
       <div class="pie__marca"><p>Talleres de música para empresas.</p></div>
       <nav class="pie__col" aria-label="Pie de página">
@@ -240,13 +249,13 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <div class="pie__col">
-        <h3>Conversemos</h3>
+      <nav class="pie__col" aria-label="Legal">
+        <h3>Legal</h3>
         <ul>
-          <li><a href="#contacto">Cuéntanos de tu equipo</a></li>
-          <li><a href="mailto:hola@solbemol.cl">hola@solbemol.cl</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Cómo guardamos tus datos</a></li>
         </ul>
-      </div>
+      </nav>
       <p class="pie__base"><span>© <span id="year">2026</span> SolBemol. Todos los derechos reservados.</span><span>Hecho con música en Chile.</span></p>
       <div class="wordmark">
 <svg class="wordmark__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 655.87 130" fill="currentColor" role="img" aria-label="SolBemol"><g>
